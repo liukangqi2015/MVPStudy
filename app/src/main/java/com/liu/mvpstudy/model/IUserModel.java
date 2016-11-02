@@ -7,8 +7,12 @@ import com.liu.mvpstudy.bean.UserBean;
  * Created by liu on 2016/10/28.
  */
 public interface IUserModel {
+    //设置id
     void setID(int id);
-    void setUsernaem(String Username);
+    //设置用户名
+    void setUsername(String Username);
+    //设置密码
     void setPassword(String password);
+    //根据ID得到用户实例
     UserBean loadUser(int id);
 }

@@ -7,6 +7,7 @@ import com.liu.mvpstudy.view.IUserView;
 
 /**
  * 用户presenter
+ * View和Model之间的桥梁，view通过presenter获取数据，设置数据
  * Created by liu on 2016/10/28.
  */
 public class UserPresenter {
@@ -20,7 +21,7 @@ public class UserPresenter {
 
     public void saveUser(int id, String username, String password) {
         userModel.setID(id);
-        userModel.setUsernaem(username);
+        userModel.setUsername(username);
         userModel.setPassword(password);
     }
 

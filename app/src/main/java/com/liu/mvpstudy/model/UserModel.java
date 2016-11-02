@@ -12,14 +12,14 @@ public class UserModel implements IUserModel{
     private String Username;
     private String Password;
     private int mID;
-    private SparseArray<UserBean> mUsererArray = new SparseArray<UserBean>();
+    private SparseArray<UserBean> mUserArray = new SparseArray<UserBean>();
     @Override
     public void setID(int id) {
         mID=id;
     }
 
     @Override
-    public void setUsernaem(String Username) {
+    public void setUsername(String Username) {
         this.Username=Username;
     }
 
@@ -27,13 +27,13 @@ public class UserModel implements IUserModel{
     public void setPassword(String Password) {
         this.Password=Password;
         UserBean userBean=new UserBean(Username,this.Password);
-        mUsererArray.append(mID,userBean);
+        mUserArray.append(mID,userBean);
     }
 
     @Override
     public UserBean loadUser(int id) {
         mID=id;
-        UserBean userBean=mUsererArray.get(id,new UserBean("not found","not found"));
+        UserBean userBean=mUserArray.get(id,new UserBean("not found","not found"));
         return userBean;
     }
 }
